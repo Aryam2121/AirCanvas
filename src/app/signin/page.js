@@ -13,7 +13,7 @@ export default function SigninPage() {
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_SOCKET_URL}/api/auth/signin`, form);
       localStorage.setItem('token', res.data.token);
-      router.push('/');
+      router.push('/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }
