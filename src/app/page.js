@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'; // Import the Next.js router
 import io from 'socket.io-client';
 import Link from 'next/link'; // Import Link for navigation
 
-const socket = io('http://localhost:4000');
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
 
 export default function Home() {
   const router = useRouter();

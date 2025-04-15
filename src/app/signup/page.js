@@ -12,7 +12,7 @@ export default function SignupPage() {
     e.preventDefault();
     console.log("Form data being sent:", form); // Log form data
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/signup', form);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_SOCKET_URL}/api/auth/signup`, form);
       console.log('Response:', res.data);  // Log response data
       localStorage.setItem('token', res.data.token);
       router.push("/signin");

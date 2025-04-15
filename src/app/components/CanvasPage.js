@@ -20,7 +20,7 @@ const CanvasPage = () => {
 
   useEffect(() => {
     // Establish socket connection
-    socket = io('http://localhost:4000');
+    socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
     socket.emit('joinSession', { sessionId });
 
     socket.on('sessionData', (data) => {

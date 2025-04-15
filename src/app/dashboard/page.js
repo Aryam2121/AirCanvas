@@ -18,7 +18,7 @@ const DashboardPage = () => {
 
   useEffect(() => {
     // Ensure socket connection is initialized
-    socket = io('http://localhost:4000');  // Backend socket server URL
+    socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);  // Backend socket server URL
 
     socket.on('connect', () => {
       console.log('Socket connected');

@@ -11,7 +11,7 @@ export default function SigninPage() {
   const handleSignin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/signin', form);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_SOCKET_URL}/api/auth/signin`, form);
       localStorage.setItem('token', res.data.token);
       router.push('/');
     } catch (err) {
